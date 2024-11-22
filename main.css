@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html, body {
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+}
+.active{
+    display: flex;
+}
+.wrapper{
+    background: radial-gradient(ellipse at 50% 50%, rgba(3, 3, 138, 1) 0%, rgba(0, 128, 108, 0.79) 100%);
+}
+.tab.current-tab{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+.location{
+    animation: rotate 6s linear infinite;
+}
+@keyframes rotate{
+    0%{
+        transform: rotateY(0deg);
+    }
+
+    100%{
+        transform: rotateY(720deg);
+    }
+}
+.active{
+    display: flex;
+}
+.name img{
+    height: 30px;
+    width: 35px;
+}
+.parameter{
+    background-color: rgba(219, 226, 239, 0.5);
+    gap: 5px 0;
+}
+[data-temp] {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center; 
+}
+.user-info-container p {
+    margin: 0;
+    padding: 0;
+}
+
+[data-temp] {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+}
+.form-container input{
+    all: unset;
+    text-indent: 5px;
+    height: 40px;
+    width:300px;
+    padding: 0 2px;
+    border-radius: 8px;
+    background-color: rgba(219, 226, 239, 0.5);
+}
+.form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+.form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+@media (max-width:350px){
+    .parameter-container{
+        flex-direction: column;
+        width: 100%;
+    }
+    .parameter{
+        width: 150px;
+    }
+    .wrapper{
+        min-height: 100vh;
+        min-width: 100vw;
+        background: radial-gradient(ellipse at 50% 50%, rgba(3, 3, 138, 1) 0%, rgba(0, 128, 108, 0.79) 100%);
+    }
+}

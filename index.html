@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="output.css">
+    
+</head>
+<body>
+    <div class="wrapper min-w-screen min-h-screen text-white">
+        <h1 class="font-bold text-[2.5rem] text-center pt-2"> WeatherNow: Stay Updated, Always </h1>
+        <div class="tab-container flex max-w-[550px] justify-between mx-auto my-11">
+            <p class="tab cursor-pointer text-lg px-2 pt-1 h-10" data-userWeather >Your Weather</p>
+            <p class="tab cursor-pointer text-lg px-2 pt-1 h-10" data-searchWeather>Search Weather</p>
+        </div>
+        <div class="weather-container flex justify-center items-center flex-col ">
+            <div class="grant-location-container flex-col items-center hidden">
+                <img src="assets/location.webp" alt="" width="80px" height="80px" loading="lazy" class="location mb-[2rem]">
+                <p class="font-medium text-[1.5rem]">Grant Location Access</p>
+                <p class="text-[0.85rem] mt-[0.65rem] mb-[1.55rem]">Allow access to get weather information</p>
+                <button class="btn text-[0.85rem] border border-blue-700 uppercase rounded-[5px] py-[10px] px-[30px] bg-blue-700" data-grantAccess>Grant Access</button>
+            </div>
+            <form class="form-container hidden justify-center items-center max-w-[550px] w-[90%]  gap-x-2 " data-searchForm>
+                <input placeholder="Search City Here..." data-searchInput class=" ">
+                <button class="btn flex w-[40px] h-[40px] justify-center items-center bg-blue-800 rounded-[500px]" type="submit">
+                    <img src="assets/search.png" alt="" width="20px" height="20px" loading="lazy">
+                </button>
+            </form>
+            <div class="loading-container flex-col items-center hidden">
+                <img src="assets/loading.gif" alt="" height="80px" width="80px" class="">
+                <p class="mb-10">Loading...</p>
+            </div>
+
+            <div class="user-info-container flex-col items-center hidden">
+                <div class="flex items-center gap-x-2.5 name mt-4 ">
+                    <p data-cityName class="text-[2.5rem]"></p>
+                    <img data-countryIcon>
+                </div>
+                <p data-weatherDesc class="text-[1.5rem] border-none"></p>
+                <img data-weatherIcon class="border-none">
+                <p data-temp class="text-4xl font-bold"></p>
+
+                <div class="parameter-container gap-y-2.5 gap-x-8 flex justify-center items-center mt-2">
+                    <div class="parameter flex flex-col rounded-[5px] max-w-[200px] max-h-[300px] p-4 w-[30%]">
+                        <img src="assets/wind.png" alt="">
+                        <p class="text-[20px] text-center">windspeed</p>
+                        <p data-windspeed class="text-[20px] text-center"></p>
+                    </div>
+                    <div class="parameter flex flex-col rounded-[5px] max-w-[200px] max-h-[300px] p-4 w-[30%]">
+                        <img src="assets/humid.png" alt="">
+                        <p class="text-[20px] text-center">humidity</p>
+                        <p data-humidity class="text-[20px] text-center"></p>
+                    </div>
+                    <div class="clouds parameter flex flex-col rounded-[5px] max-w-[200px] max-h-[300px] p-4 w-[30%]">
+                        <img src="assets/clouds.png" alt="">
+                        <p class="text-[20px] text-center">clouds</p>
+                        <p data-cloudiness class="text-[20px] text-center"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
